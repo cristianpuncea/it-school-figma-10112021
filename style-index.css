@@ -29,8 +29,13 @@
     --error-900: #B33A38;
 }
 
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
 html {
-    font-size: 16px;
+    font-size: 16px;    
 }
 
 body {
@@ -42,7 +47,7 @@ body {
     font-size: 0.875rem;
 }
 
-h1, h2, h3, h4 {
+h1, h3, h4 {
     font-weight: 600;
 }
 
@@ -54,6 +59,7 @@ h1 {
 h2 {
     font-size: 2.31rem; 
     line-height: 3.37rem;
+    font-weight: 700;
 }
 
 h3 {
@@ -71,6 +77,7 @@ h4 {
     font-size: 1rem;    
     line-height: 1.5rem;
     letter-spacing: 0.0625rem;
+    text-align: center;
 }
 
 .font-btn-sm {
@@ -95,4 +102,113 @@ h4 {
 .shadow-f2 {
     box-shadow: 0px 8px 24px rgba(8, 68, 73, 0.35);
     border-radius: 8px;
+}
+
+.nav-bar {
+    display: flex;
+    position: sticky;
+    top: 0;
+    flex-flow: row wrap;
+    max-width: 1040px;
+    min-height: 72px;   
+    justify-content: flex-end;
+    background-color: #fff;
+    padding: 1rem 1.5rem 1rem 1rem;
+    align-items: center;
+    margin: auto;
+    }
+
+    .nav-btns {
+        flex-basis: 100%;
+    }
+
+.nav-btns ul {    
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    column-gap: 1.5rem;  
+   }
+
+.emphasis-btn-tertiary {
+    display: inline-block;
+    padding: 12px 24px;
+    text-decoration: none;
+}
+
+.emphasis-btn-tertiary:hover {
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.25)), #D8EFF0;
+    border-radius: 8px;
+    border-radius: 8px;
+} 
+
+.emphasis-btn-tertiary:active {
+    background: #FFFFFF;
+    box-shadow: inset 0px -2px 0px #353A8C;
+    border-radius: 0;
+    color: var(--secondary-p900);
+}
+
+.hamburger-icon {
+    cursor: pointer;
+    margin-left: 1rem;;    
+}
+
+.shop-btn {
+    display: flex;
+    background: linear-gradient(180deg, #353A8C 0%, #2A5AA2 100%);
+    border-radius: 51px;
+    color: #fff;       
+    max-height: 48px;
+    padding: 0.75rem;
+    align-items: center;
+    line-height: 1rem;
+}
+
+.shop-btn img {
+    cursor: pointer;
+}
+
+.shop-btn span {
+    margin-right: 10px;
+    margin-bottom: 0;
+}
+
+.logo {
+    max-height: 32px;
+    width: auto;
+    position: absolute;
+    top: 1.25rem;
+    left: 1rem;
+}
+
+.rest-of-body {
+    max-width: 1040px;
+    margin: auto;
+}
+
+@media only screen and (min-width: 768px) {   
+    
+        .nav-bar {
+            padding: 0;
+            flex-direction: row-reverse;
+            justify-content: flex-start;
+        }
+
+        .logo {
+            max-height: 40px;
+            top: 1rem;            b                
+        }     
+
+        .hamburger-icon {
+            display: none;
+        }
+
+        .nav-btns {
+            flex-basis: auto;
+        }
+
+        .nav-btns ul li {
+            display: inline-block;
+        }
+
 }
