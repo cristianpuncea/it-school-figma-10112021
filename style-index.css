@@ -282,10 +282,40 @@ h4 {
 /* Products container - END */
 
 /* About products - START */
-.rest-of-body {
+.about-products {
+    display: flex;
+    flex-direction: column;
     max-width: 1040px;
     margin: auto;
+    height: 42%;
+    row-gap: 1.5rem;
+    margin-bottom: 3.875rem;
+    margin-top: 3rem;
 }
+
+.about-products > img {
+    min-width: 376px;
+    max-height: 159px;
+    object-fit: cover;
+    margin: auto;
+}
+
+.about-products .description {
+    padding: 0 1rem;
+    color: var(--secondary-p3);
+}
+
+.about-products .description h4::before {
+    content: '';
+    display: inline-block;
+    background-image: url("/images/icons/about/group-22.svg");
+    background-repeat: no-repeat;
+    object-fit: cover;
+    height: 1rem;   
+    width: 2rem;
+    padding-right: 0.75rem;
+}
+
 /* About products - END */
 
 /* Footer - START */
@@ -447,7 +477,7 @@ footer .footer-copy span {
         .products {
             flex-direction: row;
             justify-content: space-between;
-            padding: 0.5rem;
+            padding: 0.5rem 0.5rem 0 0.5rem;
         }
 
         .products .prod-card {
@@ -490,8 +520,23 @@ footer .footer-copy span {
     /* Products container - START */
 
 
-    /* About products - END */
+    /* About products - START */
+        .about-products {
+            flex-direction: row-reverse;
+            margin: 106px auto 112px auto;
+            column-gap: 19px;            
+        }
 
+        .about-products .description {
+            padding: 0 1.5rem 0 0;
+        }
+
+        .about-products > img {           
+            min-width: auto;
+            max-height: 327px;
+        }
+
+        .about-products .de
 
     /* About products - END */
 
