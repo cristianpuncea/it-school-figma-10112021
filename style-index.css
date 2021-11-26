@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 
-/* Variables and default design style definition */
+/* Variables and default design style definition START*/
 :root {
     /* Primary palette */
     --primary-500: #353A8D;
@@ -99,6 +99,12 @@ h4 {
     text-align: center;
 }
 
+.font-btn-tabs {
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1.375rem;
+}
+
 .shadow-f1 {
     box-shadow: 0px 2px 4px rgba(8, 68, 73, 0.24), 0px 4px 16px rgba(8, 68, 73, 0.35);
     border-radius: 8px;
@@ -108,6 +114,53 @@ h4 {
     box-shadow: 0px 8px 24px rgba(8, 68, 73, 0.35);
     border-radius: 8px;
 }
+
+.emphasis-btn-tertiary {
+    display: inline-block;
+    padding: 8px 16px;
+    text-decoration: none;
+    border-radius: 4px;
+    color: var(--primary-500);
+}
+
+.emphasis-btn-tertiary:hover {
+    background: #F3F4F8;
+    color: #4C53B1;
+}
+
+.emphasis-btn-tertiary:focus {
+    background: #F3F4F8;
+    border: 3px solid #70A6F7;
+    color: #4C53B1;
+}
+
+.emphasis-btn-tertiary:active {
+    background: #CFD3E1;
+}
+
+.emphasis-btn-tabs {
+    display: inline-block;
+    padding: 8px;
+    text-decoration: none;
+    border-radius: 8px;
+    color: var(--secondary-p2);
+}
+
+.emphasis-btn-tabs:hover {
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.25)), #D8EFF0;
+    color: var(--secondary-p2);
+} 
+
+.emphasis-btn-tabs:active {
+    background: #FFFFFF;
+    box-shadow: inset 0px -2px 0px #353A8C;
+    border-radius: 0;
+    color: #10246A;
+    font-weight: 600;
+}
+/* Variables and default design style definition START*/
+
+
 /* MOBILE FIRST defined style */
 
 /* Navbar style - START */
@@ -140,25 +193,6 @@ h4 {
     column-gap: 1.5rem;  
    }
 
-.emphasis-btn-tertiary {
-    display: inline-block;
-    padding: 12px 24px;
-    text-decoration: none;
-}
-
-.emphasis-btn-tertiary:hover {
-    background: linear-gradient(0deg, rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.25)), #D8EFF0;
-    border-radius: 8px;
-    border-radius: 8px;
-} 
-
-.emphasis-btn-tertiary:active {
-    background: #FFFFFF;
-    box-shadow: inset 0px -2px 0px #353A8C;
-    border-radius: 0;
-    color: var(--secondary-p900);
-}
-
 .hamburger-icon {
     cursor: pointer;
     margin: 0 1.5rem 0 1rem;
@@ -174,6 +208,7 @@ h4 {
     padding: 0.75rem;
     align-items: center;
     line-height: 1rem;
+    margin-left: 1.5rem;
  }
 
 .shop-btn img {
@@ -293,11 +328,13 @@ h4 {
     display: none;
 }
 
-.prod-card .action h4 {
+.prod-card .action .price {
     display: block;
     margin: 10.5px 1rem;
     text-transform: capitalize;
     line-height: 1.6rem;
+    font-weight: 600;
+    font-size: 1.3rem;
     color: var(--secondary-p4);
 }
 
@@ -507,6 +544,12 @@ footer .footer-copy span {
         }
     /* Breadcrumbs bar - END */
 
+    /* Tabs bar - START */
+        .tabs ul {
+            flex-direction: row;
+        }
+    /* Tabs bar - END */
+
     /* Products container - START */
         .products {
             flex-direction: row;
@@ -533,29 +576,32 @@ footer .footer-copy span {
         }
         
         .prod-card .action {
-            position: relative;
             width: 100%;
             min-height: 46px;
-            display: block;
+            display: flex;
+            justify-content: space-between;
         }
 
-        .prod-card .action i {            
-            padding: 0.5rem 1rem;
-            bottom: 0.5rem;
-            right: 2rem;
+        .prod-card .action.no-price {
+            justify-content: flex-end;
+        }
+
+        .prod-card .action i {
+            display: none;
+            align-self: center;            
+            padding: 0.5rem 1rem;            
             background-color: var(--primary-accent);
             border-radius: 2rem;
-            color: var(--primary-500);
-            display: none;
+            color: var(--primary-500);            
+            margin-right: 2rem;
         }
 
         .prod-card:hover .action i {
-            cursor: pointer;
             display: block;
+            cursor: pointer;            
             animation-name: fromLeft;
             animation-duration: 0.2s;
             animation-timing-function: ease-in;
-            position: absolute;
         }
     /* Products container - START */
 
